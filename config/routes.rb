@@ -1,4 +1,42 @@
 Rails.application.routes.draw do
+
+  get '/users/new', to: 'users#new'
+  post '/users', to: 'users#create'
+  get '/users', to: 'users#index'
+  get '/users/login', to:  'sessions#login'
+  post '/login', to: 'sessions#create'
+  # get '/links/new', to: ''
+  # post '/links', to: ...
+  # get '/link/:id', to: ...
+  # get '/link/:id/comments', to:...
+  # post '/link/:id/comments', to:...
+
+
+
+
+  # post 'users/session', to: 'sessions#create'
+  # delete 'users/session', to: 'sessions#destroy'
+
+            # show the login page POST /login # set the user
+            #  id in the session if password checks out DELETE
+            # /login # remove user id from session
+
+  # get '/links/new', to: # show the form for a new link POST /links # the f
+  #                # orm action for new link, creates a link (if logged
+  #                #  in) GET /link/:id # takes you to the thing it links to
+  #
+  # get '/link/:id/comments', to: # get the page for a link, its comments, and comment
+  #                        # form POST /link/:id/comments # the form action for new comment,
+  #                        #  creates a comment (if logged in)
+  #
+  # get '/link/:id/comments', to: # get the page for a link, its comments, and
+  #                        #  comment form POST /link/:id/comments # the
+                         # form action for new comment, creates a comment
+                         # (if logged in)
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
