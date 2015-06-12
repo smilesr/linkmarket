@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index'
   get '/users/login', to:  'sessions#login'
   post '/login', to: 'sessions#create'
-  # get '/links/new', to: ''
-  # post '/links', to: ...
-  # get '/link/:id', to: ...
-  # get '/link/:id/comments', to:...
-  # post '/link/:id/comments', to:...
+  get '/links/new', to: 'links#new'
+  post '/links', to: 'links#create'
+  get '/link/:id', to: ''
+  get '/link/:id/comments', to: 'comments#new'
+  post '/link/:id/comments', to: 'comments#create'
 
 
 
