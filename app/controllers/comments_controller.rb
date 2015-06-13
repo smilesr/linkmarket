@@ -7,7 +7,7 @@ end
 def create
   @comment = Link.comments.create(content = params[:content],
                       user_id = user.id,
-                      written_at = DateTime.now)
+                      created_at = DateTime.now)
 
   redirect_to :root  
 end
