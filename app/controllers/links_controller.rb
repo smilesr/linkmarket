@@ -1,5 +1,15 @@
-def new
-end
+class LinksController < ApplicationController
 
-def create
+  def index
+    @links = Link.all
+  end
+
+  def new
+
+  end
+
+  def create
+
+  end
+
 end
