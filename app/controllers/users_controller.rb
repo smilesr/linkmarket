@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def new
-    @action = users_path
+    @action = users_new_path
     render :new
   end
 
@@ -11,10 +11,6 @@ class UsersController < ApplicationController
                         password: passhash)
     flash[:notice] = "User successfully created. Welcome!"
     redirect_to :root
-  end
-
-  def index
-    @users = User.all
   end
 
 end

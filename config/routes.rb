@@ -1,21 +1,22 @@
 Rails.application.routes.draw do
-
+  root to: "links#index"
   get '/users/new', to: 'users#new'
-  post '/users', to: 'users#create'
-  get '/users', to: 'users#index'
+  post '/users/new', to: 'users#create'
   get '/users/login', to:  'sessions#login'
-  post '/login', to: 'sessions#create'
-  get '/links/new', to: 'links#new'
-  post '/links', to: 'links#create'
-  get '/link/:id', to: ''
-  get '/link/:id/comments', to: 'comments#new'
-  post '/link/:id/comments', to: 'comments#create'
+  post '/users/login', to: 'sessions#create'
+  # delete 'users/', to: 'sessions#destroy'
+
+  # get "/links/:id", to: URL
+  get "/links/new", to: "links#new"
+  post "/links", to: "links#create"
+
+  get '/links/:id/comments', to: 'comments#new'
+  post '/links/:id/comments', to: 'comments#create'
 
 
 
 
-  # post 'users/session', to: 'sessions#create'
-  # delete 'users/session', to: 'sessions#destroy'
+
 
             # show the login page POST /login # set the user
             #  id in the session if password checks out DELETE
