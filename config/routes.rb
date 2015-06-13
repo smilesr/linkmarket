@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  root :to "links#index"
+  root to: "links#index"
   get '/users/new', to: 'users#new'
-  post '/users', to: 'users#create'
+  post '/users/new', to: 'users#create'
   get '/users/login', to:  'sessions#login'
-  post '/users', to: 'sessions#create'
+  post '/users/login', to: 'sessions#create'
   # delete 'users/', to: 'sessions#destroy'
 
   # get "/links/:id", to: URL
   get "/links/new", to: "links#new"
   post "/links", to: "links#create"
 
-  get '/links/:id/comments', to: 'comments#show'
+  get '/links/:id/comments', to: 'comments#new'
   post '/links/:id/comments', to: 'comments#create'
 
 

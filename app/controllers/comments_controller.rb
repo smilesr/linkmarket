@@ -1,2 +1,4 @@
-def new
+class CommentsController < ApplicationController
+  def new
+  end
 end
