@@ -1,3 +1,4 @@
 class Comment < ActiveRecord::Base
-  has_many :comments
+  belongs_to :link
+  belongs_to :user
 end
