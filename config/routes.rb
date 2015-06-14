@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: "links#index"
   get '/users/new', to: 'users#new'
-  post '/users/new', to: 'users#create', as: "users_new"
+  post '/users/new', to: 'users#create'
   get '/users/login', to:  'sessions#login'
-  post '/users/login', to: 'sessions#create', as: "users_login"
+  post '/users/login', to: 'sessions#create'
   # delete 'users/', to: 'sessions#destroy'
 
   # get "/links/:id", to: URL
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post "/links", to: "links#create"
 
   get "/link/:id/comments", to: "comments#new", as: "comments_new"
-  post "/link/:id/comments", to: "comments#create", as: "comments_new"
+  post "/link/:id/comments", to: "comments#create"
 
 
             # show the login page POST /login # set the user
