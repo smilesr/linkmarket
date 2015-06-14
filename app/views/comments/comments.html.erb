@@ -1,1 +1,22 @@
-<h1> LinkMarket - Homepage </h1>
+<h1> LinkMarket - Comment Page </h1>
+
+<div>
+  <%= link_to "Back", :back %>
+</div>
+
+<%= form_tag('comments_new_path') do %>
+  <div class="form-group">
+    <%= label_tag(:content, "Comment: ") %>
+    <br/>
+    <%= text_area_tag(:content, @link.comment.content, rows: 20, cols: 60) %>
+  </div>
+
+  <div><%= submit_tag 'Save', class: 'btn btn-default' %></div>
+
+  <div>
+    <% @all_comments.each do |comment| %>
+      <%= comment %>
+    <% end %>
+
+
+<% end %>
