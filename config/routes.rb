@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/links/new", to: "links#new"
   post "/links", to: "links#create"
 
-  get '/links/:id/comments', to: 'comments#new'
+  get '/links/:id/comments', to: 'comments#new', “, as: 'comments_new’
   post '/links/:id/comments', to: 'comments#create'
 
 
