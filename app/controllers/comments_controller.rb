@@ -1,6 +1,3 @@
-
-
-
 class CommentsController < ApplicationController
 def new
   @link = Link.create(link_id: params[:id])
