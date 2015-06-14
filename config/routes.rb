@@ -1,21 +1,17 @@
 Rails.application.routes.draw do
   root to: "links#index"
   get '/users/new', to: 'users#new'
-  post '/users/new', to: 'users#create'
+  post '/users/new', to: 'users#create', as: "users_new"
   get '/users/login', to:  'sessions#login'
-  post '/users/login', to: 'sessions#create'
+  post '/users/login', to: 'sessions#create', as: "users_login"
   # delete 'users/', to: 'sessions#destroy'
 
   # get "/links/:id", to: URL
   get "/links/new", to: "links#new"
   post "/links", to: "links#create"
 
-  get "/links/:id/comments", to: "comments#new", as: "comments_new"
-  post "/links/:id/comments", to: "comments#create"
-
-
-
-
+  get "/link/:id/comments", to: "comments#new", as: "comments_new"
+  post "/link/:id/comments", to: "comments#create", as: "comments_new"
 
 
             # show the login page POST /login # set the user
