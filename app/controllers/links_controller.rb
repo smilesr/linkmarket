@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
 
   def index
-    @links = Link.all.order_by(created_at: :DESC)
+    @links = Link.all.order(created_at: :DESC)
     render :index
   end
 
@@ -10,7 +10,7 @@ class LinksController < ApplicationController
     # @user = User.create(email: params[@user])
     render :new
   else
-    redirect_to :users_login_path
+    redirect_to users_login_path
   end
 
   end

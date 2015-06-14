@@ -1,7 +1,7 @@
 <h1> LinkMarket - Homepage </h1>
 <div class="links">
-  <% @links.each do |post| %>
-    <%= <a href = @post.destination>text_field_tag(:title @post.title)%>
+  <% @links.each do |link| %>
+    <%= text_field_tag(:title, link.title)%>
     <%=link_to "Comments", comments_new_path %>
   <% end %>
 </div>
