@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150611212902) do
     t.integer  "user_id"
     t.integer  "link_id"
     t.text     "content"
+    t.datetime "written_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
