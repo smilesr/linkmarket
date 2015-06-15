@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   # delete 'users/', to: 'sessions#destroy'
 
   # get "/links/:id", to: URL
-  get "/links/new", to: "links#new"
-  post "/links", to: "links#create"
+  get "/links/links", to: "links#new"
+  post "/links/links", to: "links#create"
 
   get "/link/:id/comments", to: "comments#new", as: "comments_new"
-  post "/link/:id/comments", to: "comments#create"
+  post "/link/:id/comments", to: "comments#create", as: "comments_create"
 
 
             # show the login page POST /login # set the user

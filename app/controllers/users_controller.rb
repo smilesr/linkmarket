@@ -11,7 +11,7 @@ class UsersController < ApplicationController
                         password: passhash)
     # flash[:notice] = "User successfully created. Welcome!"
     # redirect_to :root
-    redirect_to :root(@user)
-   end
+    redirect_to :root
+  end
 
 end
