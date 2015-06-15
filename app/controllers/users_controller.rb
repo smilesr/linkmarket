@@ -9,8 +9,9 @@ class UsersController < ApplicationController
     passhash = Digest::SHA1.hexdigest(params[:password])
     @user = User.create(email: params[:email],
                         password: passhash)
-    flash[:notice] = "User successfully created. Welcome!"
-    redirect_to :root
-  end
+    # flash[:notice] = "User successfully created. Welcome!"
+    # redirect_to :root
+    redirect_to :root(@user)
+   end
 
 end
