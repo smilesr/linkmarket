@@ -1,11 +1,15 @@
 <h1> LinkMarket - Homepage </h1>
-<div class="links">
-  <% @links.each do |link| %>
-    <%= text_field_tag(:title, link.title)%>
-    <%=link_to "Comments", comments_new_path %>
-  <% end %>
-</div>
-
 <%= link_to "Login", users_login_path %>
 <%= link_to "Register", users_new_path %>
-<%= link_to "Post Link", links_new_path %>
+<%= link_to "Post Link", links_links_path %>
+<div class="links">
+  <% @links.each do |link| %>
+    <%= text_field_tag(:title, link.title) %>
+    <%= hidden_field_tag(:id, nil, rows: 2, cols: 2) %>
+
+    <%= link_to "Comments", comments_new_path(link.id) %>
+
+</div>
+
+
+<% end %>
