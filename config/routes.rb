@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: "links#index"
 
   # get "/links/:id", to: URL
-  get "/links/links", to: "links#new"
-  post "/links/links", to: "links#create"
+  get "/links", to: "links#new"
+  post "/links", to: "links#create"
 
   get "/link/:id/comments", to: "comments#new", as: "comments_new"
   post "/link/:id/comments", to: "comments#create", as: "comments_create"

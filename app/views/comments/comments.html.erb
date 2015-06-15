@@ -4,9 +4,11 @@
   <%= link_to "Back", :back %>
 </div>
 
+<h2><%= link_to @link.title, @link.destination %></h2>
+
 <%= form_tag(comments_create_path) do %>
   <div class="form-group">
-    <%= label_tag(:title, "Comment: ") %>
+    <%= label_tag(:content, "Comment: ") %>
     <br/>
     <%= text_area_tag(:content, nil, rows: 20, cols: 60) %>
   </div>
@@ -14,9 +16,11 @@
   <div><%= submit_tag 'Save', class: 'btn btn-default' %></div>
 
   <div>
+    <ul>
     <% @all_comments.each do |comment| %>
-      <%= comment.user.email %>
+      <li><%= comment.content %></li>
     <% end %>
-
+    </ul>
+  </div>
 
 <% end %>
