@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "links#index"
-  get '/users/new', to: 'users#new'
-  post '/users/new', to: 'users#create'
-  get '/users/login', to:  'sessions#login'
-  post '/users/login', to: 'sessions#create'
-  # delete 'users/', to: 'sessions#destroy'
 
   # get "/links/:id", to: URL
   get "/links/links", to: "links#new"
