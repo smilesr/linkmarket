@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
   def login
-    @action = users_login_path
-    render :login
+      @action = users_login_path
+      render :login
   end
 
   def create
@@ -11,11 +11,13 @@ class SessionsController < ApplicationController
 
     if @user && @user.password == passhash
       session[:user_id] = @user.id
+      redirect_to :root
     else
       flash[:error] = "No user found with that email and password."
+      redirect_to users_new_path
     end
 
-    redirect_to :root
+    # redirect_to :root
   end
 
   def destroy

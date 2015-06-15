@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 def new
-  if @user
+  if session[:user_id]
     @link = Link.create(link_id: params[:id])
     @all_comments = @link.comments.all
     render :new

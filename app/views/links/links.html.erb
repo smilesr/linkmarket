@@ -1,6 +1,6 @@
 <h1> LinkMarket - Post a Link Page </h1>
 
-<% form_tag(links_path) do %>
+<% form_tag(links_new_path) do %>
   <div>
     <%=label_tag(:title, "Title:")%>
     <%=text_field_tag(:title, @link.title, size: 40)%>

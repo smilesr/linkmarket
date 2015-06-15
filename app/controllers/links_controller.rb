@@ -2,11 +2,13 @@ class LinksController < ApplicationController
 
   def index
     @links = Link.all.order(created_at: :DESC)
+    # binding.pry
     render :index
   end
 
-  def new
-  if @user
+  def new 
+
+  if session
     # @user = User.create(email: params[@user])
     render :new
   else
