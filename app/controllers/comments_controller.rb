@@ -1,21 +1,22 @@
 class CommentsController < ApplicationController
   def new
-    if session[:user_id]
-      @link = Link.find_by(id: params[:id])
-      @all_comments = Comment.find_by(link_id: params[:id])
+    @link = Link.find(params[:id])
+    @all_comments = @link.comments
 
-      render :comments
-    else
-      redirect_to :users_login_path
-    end
+    render :comments
   end
 
   def create
-    @all_comments = Comment.find_by(link_id: params[:id])
-    @comment = Comment.create(content: params[:content],
-                        user_id: params[:user_id],
-                        link_id: params[:link_id],
-                        created_at: DateTime.now)
-      render :comments
+    @link = Link.find(params[:id])
+
+    if session[:user_id]
+      @comment = @link.comments.create(content: params[:content],
+                                       user_id: session[:user_id])
+      flash[:notice] = 'Comment posted.'
+    else
+      flash[:alert] = 'Only logged in users can post comments.'
+    end
+
+    redirect_to comments_new_path(@link)
   end
 end
