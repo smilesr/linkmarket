@@ -4,7 +4,8 @@
   </div>
   <div class="nav-bar">
     <div class="row">
-      <%= link_to "Login", new_user_session_path, class: 'btn btn-info' %>
+      <p class="top-row">
+      <%= link_to "Login", new_user_session_path, class: 'btn btn-info, bg-info' %>
       <%= link_to "Register", new_user_registration_path, class: 'btn btn-info' %>
       <%= link_to "Post Link", links_path, class: 'btn btn-info' %>
 
@@ -12,6 +13,7 @@
       <%= link_to "Log Out", destroy_user_session_path,class: 'btn btn-primary',
             method: :delete %>
       <% end %>
+      </p>
     </div>
   </div>
 
