@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
 
   def create
     @link = Link.find(params[:id])
+
     if current_user
       @comment = @link.comments.create(content: params[:content],
                                        user_id: current_user)

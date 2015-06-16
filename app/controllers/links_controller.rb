@@ -4,6 +4,7 @@ class LinksController < ApplicationController
     # binding.pry
     render :index
   end
+
   def new
     if current_user
       # @user = User.create(email: params[@user])
@@ -12,6 +13,7 @@ class LinksController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+
   def create
     @link = Link.create(destination: params[:destination],
                               title: params[:title],
