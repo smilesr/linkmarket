@@ -1,13 +1,15 @@
 <h1> LinkMarket - Post a Link Page </h1>
 
-<%= form_tag(links_links_path) do %>
+<%= form_tag(links_path) do %>
   <div>
     <%=label_tag(:title, "Title:")%>
     <%=text_field_tag(:title, nil, size: 40)%>
     <br>
     <%=label_tag(:destination, "Link:")%>
     <%=url_field_tag(:destination, nil, size: 40)%>
+  <div><%= submit_tag 'Save', class: 'btn btn-danger' %></div>
+<% end %>
 
-  <div><%= submit_tag 'Save', class: 'btn btn-default' %></div>
-
-  <% end %>
+<div>
+  <%= link_to "Back", :root %>
+</div>
