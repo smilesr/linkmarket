@@ -9,7 +9,7 @@ class LinksController < ApplicationController
       # @user = User.create(email: params[@user])
       render :links
     else
-      redirect_to users_login_path
+      redirect_to new_user_session_path
     end
   end
   def create
