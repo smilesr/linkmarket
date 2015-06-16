@@ -8,7 +8,7 @@ class LinksController < ApplicationController
 
   def new
 
-    if session
+    if current_user
       # @user = User.create(email: params[@user])
       render :links
     else

@@ -4,6 +4,9 @@
   <%= link_to "Back", :back %>
 </div>
 
+<div>
+  <%= link_to "Home", :root %>
+
 <h2><%= link_to @link.title, @link.destination %></h2>
 
 <%= form_tag(comments_create_path) do %>
@@ -19,6 +22,9 @@
     <ul>
     <% @all_comments.each do |comment| %>
       <li><%= comment.content %></li>
+      <li><%= <time datetime="YYYY-MM-DDThh:mm:ssTZD">comment.created_at %></li>
+      DATETIME - format: YYYY-MM-DD HH:MI:SS
+      <br>
     <% end %>
     </ul>
   </div>

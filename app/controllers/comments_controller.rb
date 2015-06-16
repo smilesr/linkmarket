@@ -9,9 +9,9 @@ class CommentsController < ApplicationController
   def create
     @link = Link.find(params[:id])
 
-    if session[:user_id]
-      @comment = @link.comments.create(content: params[:content],
-                                       user_id: session[:user_id])
+    if current_user
+      @comment = @link.comments.create(content: params[:content])
+                                       # ,user_id: session[:user_id])
       flash[:notice] = 'Comment posted.'
     else
       flash[:alert] = 'Only logged in users can post comments.'
