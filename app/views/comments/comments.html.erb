@@ -1,7 +1,7 @@
 <h1> LinkMarket - Comment Page </h1>
 
 <div>
-  <%= link_to "Back", :back %>
+  <%= link_to "Back", :root %>
 </div>
 
 <h2><%= link_to @link.title, @link.destination %></h2>
@@ -13,7 +13,7 @@
     <%= text_area_tag(:content, nil, rows: 20, cols: 60) %>
   </div>
 
-  <div><%= submit_tag 'Save', class: 'btn btn-default' %></div>
+  <div><%= submit_tag 'Save', class: 'btn btn-danger' %></div>
 
   <div>
     <ul>
